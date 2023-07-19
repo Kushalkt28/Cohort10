@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #numbers {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .item {
+        height: 200px;
+        width: 200px;
+
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="numbers"></div>
+    <script>
+      let numbers = [
+        10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+        100, 105,
+      ];
+
+      const numbersContainer = document.getElementById("numbers");
+      for (let i = 0; i < numbers.length; i++) {
+        const divElem = document.createElement("div");
+        divElem.className = "item";
+        divElem.innerText = numbers[i];
+
+        if (numbers[i] % 2 == 0) {
+          divElem.style.backgroundColor = "red";
+        } else divElem.style.backgroundColor = "blue";
+
+        numbersContainer.appendChild(divElem);
+      }
+    </script>
+  </body>
+</html>
